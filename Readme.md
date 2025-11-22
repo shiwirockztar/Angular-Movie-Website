@@ -14,73 +14,119 @@
   </a>
   <br />
   <br />
-</p>
+# Angular Movie Website
 
-## 🔖 Description
+Proyecto frontend en Angular para mostrar y buscar películas. Este repositorio contiene la aplicación frontend dentro de la carpeta `Angular/`.
 
-The candidate must develop a web application that allows users to search for movies
-and save them to their profile. The application should be based on Angular for the frontend and .NET
-Core 6.0 for the backend. In addition, it should use a public movie API to fetch data from movies.
-movie data. An authentication system and a database must be implemented to store user information and saved movies.
-store user information and the movies saved by each user.
-Recommended movie API, not mandatory: Getting Started (themoviedb.org)
-(https://developer.themoviedb.org/reference/intro/getting-started)
+## Descripción
 
-Official Documentation: [DotNet | API ](https://learn.microsoft.com/en-us/dotnet/)
-Official Documentation: [Angular | Front](https://docs.angular.lat/docs)
-Official Documentation: [Swagger | REST API documentation](https://www.youtube.com/watch?v=RayDPBYou4I)
-Official Documentation: [MySQL | Database](https://dev.mysql.com/doc/)
+Aplicación cliente para buscar películas, ver detalles y guardar películas en el perfil del usuario. Está diseñada como frontend en Angular; si necesitas una API/Backend, en este repositorio solo está incluida la parte frontend (la README original mencionaba .NET y MySQL, pero no se encuentran aquí los archivos del backend).
 
-## 📌 Methodologies and Guidelines
+## Estructura de carpetas (resumen actual)
 
-List of methodologies and tools used in this project for compliance with Quality Assurance Code (QAC)
+La estructura principal del proyecto es la siguiente (solo se muestran las carpetas más relevantes):
 
-- ESTlint, tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. \
-  [NPM ESLint](https://www.npmjs.com/package/eslint) \
-  [NPM ESLint | Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+```
+Readme.md
+Angular/
+  angular.json
+  package.json
+  tsconfig.json
+  src/
+    index.html
+    main.ts
+    styles.css
+    app/
+      app.module.ts
+      app.component.ts
+      components/
+        banner/
+        gallery/
+        header/
+        home-sidebar/
+        movie-list/
+        navbar/
+        recommended-list/
+        sidebar/
+      models/
+      pages/
+      services/
+    assets/
+assets/
 
-## ✅ Prerequisites
-
-In order to work with this project, your local environment must have at least the following versions:
-
-- Dotnet core 6
-- Nodejs Version: 18.18.0
-- NPM Version: 9.8.1
-- Angular Cli 16.2.3
-- MySql
-
-## 📐 How to work with this project
-
-You have to do the following steps to be able to work with this project.
-
-## 📂 Code scaffolding
-
-```any
-/
-├── Backend (.NET Core) 📦  # Main App Server.
-├── BackendExe 📦           # App executable.
-├── DB (MySQL) 📜           # Sql script.
-├── Frontend (Angular) 🌐   # Frontend service interface.
-├── assets 🌈               # Images Sources.
-├── Readme  📝              # Project information and instructions.
-└── ...
 ```
 
-## ⛽️ Review and Update Dependences
+Nota: la carpeta `Angular/` contiene la aplicación frontend completa. Si tienes un backend, colócalo en una carpeta raíz separada (por ejemplo `Backend/`).
 
-For review and update all npm dependences of this project you need install in global npm package "npm-check-updates" npm module.
+## Requisitos previos
+
+- Node.js (recomendado >= 18)
+- npm (v9+)
+- Angular CLI (opcional globalmente)
+
+Si no tienes Angular CLI instalado globalmente puedes instalarlo (opcional):
 
 ```bash
-# Install and Run
-$npm i -g npm-check-updates
-$ncu
+npm install -g @angular/cli
 ```
 
-## Happy Code
+> No es estrictamente necesario instalar Angular CLI globalmente si prefieres usar los scripts locales de `package.json` dentro de `Angular/`.
 
-Created with JavaScript, lot of ❤️ and a few ☕️
+## Instrucciones para ejecutar el proyecto (frontend)
 
-## This README.md file has been written keeping in mind
+1. Abrir una terminal y situarse en la carpeta del frontend:
 
-- [GitHub Markdown](https://guides.github.com/features/mastering-markdown/)
-- [Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
+```bash
+cd Angular
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecutar la aplicación en modo desarrollo:
+
+```bash
+npm start
+# o usando ng directamente si tienes Angular CLI global:
+ng serve --open
+```
+
+El comando `npm start` suele ejecutar `ng serve`. Esto levantará el servidor de desarrollo y abrirá la app en `http://localhost:4200/` (o mostrando la URL en la consola).
+
+## Comandos útiles
+
+- Instalar dependencias: `npm install` (dentro de `Angular/`)
+- Ejecutar app en desarrollo: `npm start` o `ng serve --open`
+- Construir para producción: `ng build --configuration production` o `npm run build` si está definido
+- Ejecutar tests (si están definidos): `npm test`
+- Lint (si está configurado): `npm run lint`
+
+## Si necesitas actualizar dependencias
+
+Puedes usar `npm-check-updates` para revisar y actualizar versiones de dependencias globalmente:
+
+```bash
+npm i -g npm-check-updates
+ncu -u
+npm install
+```
+
+## Notas y recomendaciones
+
+- Si el proyecto depende de un backend (API REST), asegúrate de tenerlo corriendo y de actualizar las URLs en `src/app/services` o en el archivo de configuración de ambiente (`environment.ts`).
+- Usa `ng serve --host 0.0.0.0` si necesitas exponer la app en la red local (útil en contenedores o máquinas remotas).
+- Revisa `Angular/package.json` para ver scripts personalizados.
+
+## Contacto
+
+Repositorio: https://github.com/shiwirockztar/Angular-Movie-Website
+
+---
+
+Si quieres, puedo:
+
+- Ejecutar `npm install` en `Angular/` y levantar el servidor de desarrollo aquí en el contenedor, o
+- Añadir instrucciones específicas si quieres que documente cómo conectar un backend .NET o cómo desplegar.
