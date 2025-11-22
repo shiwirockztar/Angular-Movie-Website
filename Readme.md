@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/pres.jpg" width="600" />
+  <img src="./assets/angularjs.jpg" width="600" />
 </p>
 <h1 align="center">Project Angular .Net and SQL</h1>
 
