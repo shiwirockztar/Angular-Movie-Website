@@ -327,7 +327,7 @@ body {
 }
 
 .poster-box {
-  background-image: url("assets/assets/images/poster-bg-icon.png");
+  background-image: url("assets/images/poster-bg-icon.png");
   aspect-ratio: 2/3;
 }
 
@@ -382,7 +382,7 @@ body {
 }
 
 .video-card {
-  background-image: url("assets/assets/images/video-bg-icon.png");
+  background-image: url("assets/images/video-bg-icon.png");
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
   min-width: 400px; /* max-width: 500px; */
