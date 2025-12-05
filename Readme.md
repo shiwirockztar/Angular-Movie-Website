@@ -120,13 +120,64 @@ npm install
 - Usa `ng serve --host 0.0.0.0` si necesitas exponer la app en la red local (útil en contenedores o máquinas remotas).
 - Revisa `Angular/package.json` para ver scripts personalizados.
 
+## Despliegue en GitHub Pages
+
+Para desplegar la aplicación Angular en GitHub Pages, sigue estos pasos:
+
+### 1. Construir la aplicación para producción
+
+```bash
+cd Angular
+npm install -g @angular/cli
+ng build --configuration production
+# o también puedes usar:
+ng build -c production
+```
+
+### 2. Instalar angular-cli-ghpages
+
+```bash
+ng add angular-cli-ghpages
+```
+
+### 3. Desplegar en GitHub Pages
+
+```bash
+ng deploy --dir=dist/movie-net --repo=https://github.com/shiwirockztar/Angular-Movie-Website.git --name="shiwirockztar" --base-href=/Angular-Movie-Website/
+```
+
+**Parámetros importantes:**
+- `--dir=dist/movie-net`: Especifica la carpeta de salida del build (carpeta real donde se genera la aplicación compilada)
+- `--repo`: URL del repositorio GitHub
+- `--name`: Tu nombre de usuario de GitHub
+- `--base-href`: Ruta base del repositorio en GitHub Pages (`/nombre_del_repositorio/`)
+
+La aplicación estará disponible en: `https://shiwirockztar.github.io/Angular-Movie-Website/`
+
+> **Nota:** Asegúrate de que GitHub Pages esté habilitado en tu repositorio (Settings → Pages → Source: gh-pages branch).
+
+### 4. Actualizar cambios en el deploy
+
+Para subir cambios a la rama de despliegue (gh-pages), solo necesitas:
+
+1. Agregar los cambios a la rama maestra (main):
+
+```bash
+git add .
+git commit -m "Descripción de los cambios"
+git push origin main
+```
+
+2. Volver a ejecutar el comando de deploy:
+
+```bash
+ng deploy --dir=dist/movie-net --repo=https://github.com/shiwirockztar/Angular-Movie-Website.git --name="shiwirockztar" --base-href=/Angular-Movie-Website/
+```
+
+Esto reconstruirá la aplicación y desplegará los cambios automáticamente a GitHub Pages.
+
+Para más información, consulta la [documentación oficial de Angular sobre despliegue](https://v17.angular.io/guide/deployment).
+
 ## Contacto
 
 Repositorio: https://github.com/shiwirockztar/Angular-Movie-Website
-
----
-
-Si quieres, puedo:
-
-- Ejecutar `npm install` en `Angular/` y levantar el servidor de desarrollo aquí en el contenedor, o
-- Añadir instrucciones específicas si quieres que documente cómo conectar un backend .NET o cómo desplegar.
