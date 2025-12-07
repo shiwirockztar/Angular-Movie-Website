@@ -15,8 +15,18 @@
   <br />
   <br />
 # Angular Movie Website
+  
+🌐 **[Ver aplicación en vivo](https://shiwirockztar.github.io/Angular-Movie-Website/)** 
 
-Proyecto frontend en Angular para mostrar y buscar películas. Este repositorio contiene la aplicación frontend dentro de la carpeta `Angular/`.
+---
+
+## Capturas de pantalla
+
+### Home
+![Home](assets/Home.JPG)
+
+### Dashboard
+![Dashboard](assets/Dashboard.JPG)
 
 ## Descripción
 
