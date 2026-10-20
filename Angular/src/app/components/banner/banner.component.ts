@@ -24,7 +24,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
     new QueryList<ElementRef>();
   @ViewChild('listItem', { static: true })
   listItem!: ElementRef<HTMLButtonElement>;
-  public movieList: any = {};
+  public movieList: any[] = [];
   public imageUrl: any = imageBaseUrl;
 
   constructor(private apiTMDB: ApiThemoviedbService, private router: Router) {}
