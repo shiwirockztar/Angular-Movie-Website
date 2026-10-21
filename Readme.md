@@ -191,3 +191,9 @@ Para más información, consulta la [documentación oficial de Angular sobre des
 ## Contacto
 
 Repositorio: https://github.com/shiwirockztar/Angular-Movie-Website
+
+#note
+cd Angular
+npm install
+npm run build
+npm run deploy
