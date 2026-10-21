@@ -17,7 +17,7 @@ import { NetServerService } from 'src/app/services/net-server.service';
 export class MoviedetailsComponent implements OnInit {
   detailId: any;
   detailMovie: any;
-  genres: any;
+  genres: any[] = [];
   constructor(
     private router: ActivatedRoute,
     private answerNet: NetServerService
@@ -30,7 +30,7 @@ export class MoviedetailsComponent implements OnInit {
       console.log(params);
     });
     this.answerNet.buscarPorId(this.detailId).subscribe((res: any) => {
-      this.genres = res.genres;
+      this.genres = Array.isArray(res?.genres) ? res.genres : [];
       this.detailMovie = res;
 
       console.log(res);

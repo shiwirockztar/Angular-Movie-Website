@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng deploy --dir=dist/movie-net --repo=https://github.com/shiwirockztar/Angular-Movie-Website.git --name=shiwirockztar --base-href=/Angular-Movie-Website/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

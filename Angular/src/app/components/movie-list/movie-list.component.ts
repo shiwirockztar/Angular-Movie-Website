@@ -16,15 +16,18 @@ export class MovieListComponent implements OnInit {
     {
       title: 'Upcoming Movies',
       path: '/movie/upcoming',
+      movies: [],
     },
     {
       //title: "Today's Trending Movies",
       title: 'Weekly Trending Movies',
       path: '/trending/movie/week',
+      movies: [],
     },
     {
       title: 'Top Rated Movies',
       path: '/movie/top_rated',
+      movies: [],
     },
   ];
 
@@ -49,7 +52,9 @@ export class MovieListComponent implements OnInit {
         const path = this.homePageSections[sectionIndex].path;
         this.apiTMDB.getMovieList(path).subscribe(
           ({ results: movieList }: any) => {
-            this.homePageSections[sectionIndex].movies = movieList;
+            this.homePageSections[sectionIndex].movies = Array.isArray(movieList)
+              ? movieList
+              : [];
             // Resuelve la promesa con el valor
             resolve(movieList);
           },

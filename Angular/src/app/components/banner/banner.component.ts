@@ -33,7 +33,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
     // Renderizar Banner por consumo de api
     this.apiTMDB.getBanner().subscribe((data: any) => {
       // console.log(data);
-      this.movieList = data.results;
+      this.movieList = Array.isArray(data?.results) ? data.results : [];
     });
   }
 

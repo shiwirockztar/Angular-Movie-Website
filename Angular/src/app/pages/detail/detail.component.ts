@@ -17,7 +17,7 @@ export class DetailComponent implements OnInit {
   public cast: any;
   public crew: any;
   public certification: any;
-  public youtubeList: any;
+  public youtubeList: any[] = [];
   imageUrl: any = imageBaseUrl;
   public openMenu: boolean = false;
 
@@ -68,12 +68,12 @@ export class DetailComponent implements OnInit {
         this.titleService.setTitle(setTitle);
 
         this.movie = movie;
-        this.cast = cast;
-        this.crew = crew;
+        this.cast = Array.isArray(cast) ? cast : [];
+        this.crew = Array.isArray(crew) ? crew : [];
         this.certification = certification;
 
         // Lista de youtube
-        this.youtubeList = this.filterVideos(videos);
+        this.youtubeList = Array.isArray(videos) ? this.filterVideos(videos) : [];
       }
     });
   }

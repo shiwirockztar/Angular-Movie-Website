@@ -16,6 +16,7 @@ export class RecommendedListComponent {
   public homePageSections: any = [
     {
       title: 'You May Also Like',
+      movies: [],
     },
   ];
 
@@ -34,7 +35,9 @@ export class RecommendedListComponent {
     });
     this.apiTMDB.getRecommendedMovie(this.detailId).subscribe((movie: any) => {
       if (movie) {
-        this.homePageSections[0].movies = movie.results;
+        this.homePageSections[0].movies = Array.isArray(movie.results)
+          ? movie.results
+          : [];
       }
     });
   }
